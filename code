@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup Cost Template</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 6px 12px;
+      margin: 8px 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Startup Cost Template</h1>
+  <label for="office-space">Office Space:</label>
+  <input type="number" id="office-space" placeholder="Enter cost">
+  <label for="equipment">Equipment:</label>
+  <input type="number" id="equipment" placeholder="Enter cost">
+  <label for="legal-fees">Legal & Licensing Fees:</label>
+  <input type="number" id="legal-fees" placeholder="Enter cost">
+  <label for="insurance">Insurance:</label>
+  <input type="number" id="insurance" placeholder="Enter cost">
+  <label for="inventory">Inventory:</label>
+  <input type="number" id="inventory" placeholder="Enter cost">
+  <label for="marketing">Marketing:</label>
+  <input type="number" id="marketing" placeholder="Enter cost">
+
+  <button onclick="calculateTotal()">Calculate Total</button>
+  <h2 id="total">Total: $0</h2>
+
+  <script>
+    function calculateTotal() {
+      const officeSpace = parseFloat(document.getElementById('office-space').value) || 0;
+      const equipment = parseFloat(document.getElementById('equipment').value) || 0;
+      const legalFees = parseFloat(document.getElementById('legal-fees').value) || 0;
+      const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+      const inventory = parseFloat(document.getElementById('inventory').value) || 0;
+      const marketing = parseFloat(document.getElementById('marketing').value) || 0;
+
+      const total = officeSpace + equipment + legalFees + insurance + inventory + marketing;
+      document.getElementById('total').innerText = `Total: $${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
